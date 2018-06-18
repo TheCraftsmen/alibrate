@@ -1,0 +1,27 @@
+Login
+
+	post https://api.alibrate.com/v1/auth/local
+
+	body
+	{
+		"username": "blas_kapo@hotmail.com",
+		"password": "NothingGonnaChange"
+	}
+
+
+Ranking 
+
+	get https://api.alibrate.com/v1/rankings/topBookReadedInLibraries?page=1&limit=20
+
+	header 
+	{
+		Authorization: Bearer asdasdasd
+	}
+
+Follow
+
+	post https://api.alibrate.com/v1/follower/follow
+
+	body
+
+	user_to_follow :{_id: "5aca231c28a43405e76e2f41"}
