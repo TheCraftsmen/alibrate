@@ -8,9 +8,9 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "nachos-ui": "^0.2.0-beta.1",
     "react": "16.3.1",
     "react-native": "0.55.4",
+    "react-native-ui-kitten": "^3.0.1",
     "react-navigation": "^2.3.1"
   },
   "devDependencies": {
