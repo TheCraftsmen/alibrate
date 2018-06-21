@@ -3,9 +3,10 @@ import {
   View, Image, ScrollView, FlatList, Text, TextInput, Button 
 } from 'react-native';
 import {RkButton} from 'react-native-ui-kitten';
+import { connect } from 'react-redux';
 import axios from 'axios';
 
-export default class TopMoreFollowedScreen extends React.Component {
+class TopMoreFollowedScreen extends React.Component {
 
   static navigationOptions = {
     title: 'Más Seguidos',
@@ -117,3 +118,5 @@ export default class TopMoreFollowedScreen extends React.Component {
     );
   }
 }
+
+export default connect( state => state, {})(TopMoreFollowedScreen);

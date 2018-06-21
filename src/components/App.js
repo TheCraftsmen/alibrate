@@ -3,9 +3,9 @@ import {
   createStackNavigator,
   createMaterialTopTabNavigator
 } from 'react-navigation';
-import LoginScreen from './components/LoginScreen';
-import TopBooksByGlobalRatingScreen from './components/TopBooksByGlobalRatingScreen';
-import TopMoreFollowedScreen from './components/TopMoreFollowedScreen';
+import LoginScreen from './LoginScreen';
+import TopBooksByGlobalRatingScreen from './TopBooksByGlobalRatingScreen';
+import TopMoreFollowedScreen from './TopMoreFollowedScreen';
 
 
 const RankingsStack = createMaterialTopTabNavigator({

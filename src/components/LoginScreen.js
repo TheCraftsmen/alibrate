@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Image } from 'react-native';
 import {RkButton, RkTextInput, RkTheme, RkText} from 'react-native-ui-kitten';
 import SvgUri from 'react-native-svg-uri';
+import { connect } from 'react-redux';
 import axios from 'axios';
 
 RkTheme.setType('RkTextInput', 'white', {
@@ -28,7 +29,7 @@ RkTheme.setType('RkButton', 'facebook', {
   backgroundColor: '#3b5998',
 });
 
-export default class LoginScreen extends React.Component {
+class LoginScreen extends React.Component {
 
   static navigationOptions = {
     header: null,
@@ -63,7 +64,7 @@ export default class LoginScreen extends React.Component {
             position: 'absolute',
             justifyContent: 'center',
           }}
-          source={require('../bg-hero.jpg')}
+          source={require('../assets/bg-hero.jpg')}
         />
         <View style={{flex: 10, flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start'}}>
           <SvgUri
@@ -110,3 +111,5 @@ export default class LoginScreen extends React.Component {
     );
   }
 }
+
+export default connect( state => state, {})(LoginScreen);

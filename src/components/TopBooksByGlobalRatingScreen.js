@@ -2,9 +2,10 @@ import React from 'react';
 import { 
   View, Image, ScrollView, FlatList, Text, TextInput, Button 
 } from 'react-native';
+import { connect } from 'react-redux';
 import axios from 'axios';
 
-export default class TopBooksByGlobalRatingScreen extends React.Component {
+class TopBooksByGlobalRatingScreen extends React.Component {
 
   static navigationOptions = {
     title: 'Más Leídos',
@@ -81,3 +82,5 @@ export default class TopBooksByGlobalRatingScreen extends React.Component {
     );
   }
 }
+
+export default connect( state => state, {})(TopBooksByGlobalRatingScreen);
