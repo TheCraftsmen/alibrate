@@ -3,6 +3,7 @@ import { View, Image } from 'react-native';
 import {RkButton, RkTextInput, RkTheme, RkText} from 'react-native-ui-kitten';
 import SvgUri from 'react-native-svg-uri';
 import { connect } from 'react-redux';
+import SvgTitle from './SvgTitle';
 import axios from 'axios';
 
 RkTheme.setType('RkTextInput', 'white', {
@@ -12,7 +13,7 @@ RkTheme.setType('RkTextInput', 'white', {
     marginHorizontal: 0,
   },
   container: {
-    paddingHorizontal: 6,
+    paddingHorizontal: 4,
     backgroundColor: 'white',
     borderRadius: 5
   },
@@ -21,7 +22,7 @@ RkTheme.setType('RkTextInput', 'white', {
 
 RkTheme.setType('RkTextInput', 'customsize', {
   container: {
-    paddingHorizontal: 6,
+    paddingHorizontal: 4,
   }
 });
 
@@ -66,29 +67,23 @@ class LoginScreen extends React.Component {
           }}
           source={require('../assets/bg-hero.jpg')}
         />
-        <View style={{flex: 10, flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start'}}>
-          <SvgUri
-            width="200"
-            height="200"
-            fill="white"
-            source={{uri:'https://cdn.alibrate.com/images/AlibrateLogoWhite.svg'}}
-          />
+        <View style={{position:'absolute', top:60, left:60}}>
+          <SvgTitle/>
         </View>
-        <View style={{flex: 10, flexDirection: 'column', marginBottom: 50, paddingLeft:10, paddingRight:10, paddingBottom: 40}}>
-          <RkText style={{paddingHorizontal: 10, color: 'white', textAlign: 'center', marginBottom: 10, marginTop: 10}}>INGRESAR</RkText>
+        <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-end', marginBottom: 40, paddingLeft:10, paddingRight:10}}>
+          <RkText style={{paddingHorizontal: 10, color: 'white', textAlign: 'center', marginBottom: 10, marginTop: 10, fontWeight:'bold', fontSize:18}}>INGRESAR</RkText>
           <RkButton 
             rkType='xlarge customsize facebook'>
             INGRESAR CON FACEBOOK
           </RkButton>
-          <RkText style={{paddingHorizontal: 10, color: 'white', textAlign: 'center', paddingTop: 20, }}>
+          <RkText style={{paddingHorizontal: 10, color: 'white', textAlign: 'center', paddingTop: 20, paddingBottom: 20}}>
             O CON TU E-MAIL
           </RkText>
-        </View>
-        <View style={{flex: 10, flexDirection: 'column', justifyContent: 'flex-end', marginBottom: 40, paddingLeft:10, paddingRight:10}}>
           <RkText style={{paddingHorizontal: 10, color: 'white', marginBottom: 0}}>E-mail(o usuario si ya eres miembro)</RkText>
           <RkTextInput 
             placeholder='Ej:blas_kapo@hotmail.com'
             rkType='white'
+            fontStyle='italic'
             onChangeText={(email) => this.setState({email: email.toLocaleLowerCase()})}
             value={this.state.email}
           />
@@ -96,6 +91,7 @@ class LoginScreen extends React.Component {
           <RkTextInput 
             placeholder='Ingresa tu contraseña'
             rkType='white'
+            fontStyle='italic'
             onChangeText={(password) => this.setState({password})}
             secureTextEntry={true} 
             value={this.state.password}
